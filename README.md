@@ -1,34 +1,55 @@
-The repository reflects the full research process, with different model versions corresponding to different stages of experimentation and design evolution.
+# Deepfake Detection System
 
-## Model Evolution
+This repository contains my undergraduate research project on deepfake detection, where I built an end-to-end system covering model development, backend services, and a lightweight frontend for interactive testing.
 
-This project follows an iterative research workflow:
+## Overview
 
-1. **Baseline Models**  
-   Initial experiments with XceptionNet-based architectures.
+The project consists of three main components:
 
-2. **Architecture Improvements**  
-   Exploration of attention mechanisms (CBAM) and enhanced feature extraction.
+- **Modeling:** Design and training of deep learning models for deepfake detection  
+- **Backend:** Data preprocessing, training pipelines, and inference services  
+- **Frontend:** Simple interface for visualizing detection results and testing model outputs  
 
-3. **Frequency-Domain Features**  
-   Introduction of FFT-based models to capture manipulation artifacts not visible in spatial domain.
+The goal of this project was to explore robust feature representations for deepfake detection and improve generalization across different datasets.
 
-4. **Final Model (Dual-Branch)**  
-   Combination of spatial and frequency-domain features to improve robustness and generalization.
+## Model Development
 
-## Key Trade-off
+I experimented with multiple model architectures and training strategies throughout the project.
 
-A major design decision in this project was balancing model complexity and generalization performance.  
+- Started with **XceptionNet-based models** for spatial feature extraction  
+- Incorporated **CBAM (attention mechanisms)** to enhance feature representation  
+- Explored different **data preprocessing pipelines** and training configurations  
+- Iterated across multiple model variants to improve robustness  
 
-While improving spatial feature extraction alone provided limited gains, incorporating frequency-domain features introduced additional complexity but significantly improved robustness. The final dual-branch design reflects a balance between performance and computational cost.
+Through these experiments, I observed that models relying solely on spatial features often struggled with cross-domain generalization.
 
-## Tech Stack
+## Final Architecture
 
-- Python
-- PyTorch
-- OpenCV
-- NumPy / SciPy
+To address this, I designed a **dual-branch model**:
+
+- **Spatial branch:** EfficientNet-B4  
+- **Frequency branch:** Frequency-domain features (e.g., FFT, DCT)  
+
+By combining spatial and frequency-domain information, the model was able to capture complementary signals and improve robustness to unseen data.
+
+## Design Considerations
+
+During development, I had to balance:
+
+- Model complexity vs. generalization performance  
+- Training cost vs. performance gains  
+- Iteration speed vs. architectural exploration  
+
+Introducing frequency-domain features improved robustness, but also increased model complexity and training time. I iterated across different designs to find a practical balance that could be trained efficiently while still achieving strong performance.
+
+## Repository Structure
+
+- `models/` – Model architectures and experiments  
+- `training/` – Training scripts and configurations  
+- `preprocessing/` – Data processing pipelines  
+- `inference/` – Inference and evaluation scripts  
+- `frontend/` – Simple UI for testing results  
 
 ## Notes
 
-This repository contains multiple model versions and experimental scripts, reflecting the iterative process of model design and optimization.
+This repository reflects an experimental research process, including multiple model iterations and exploratory implementations.
