@@ -1,29 +1,34 @@
-# graduationproject
+The repository reflects the full research process, with different model versions corresponding to different stages of experimentation and design evolution.
 
-This template should help get you started developing with Vue 3 in Vite.
+## Model Evolution
 
-## Recommended IDE Setup
+This project follows an iterative research workflow:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+1. **Baseline Models**  
+   Initial experiments with XceptionNet-based architectures.
 
-## Customize configuration
+2. **Architecture Improvements**  
+   Exploration of attention mechanisms (CBAM) and enhanced feature extraction.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+3. **Frequency-Domain Features**  
+   Introduction of FFT-based models to capture manipulation artifacts not visible in spatial domain.
 
-## Project Setup
+4. **Final Model (Dual-Branch)**  
+   Combination of spatial and frequency-domain features to improve robustness and generalization.
 
-```sh
-npm install
-```
+## Key Trade-off
 
-### Compile and Hot-Reload for Development
+A major design decision in this project was balancing model complexity and generalization performance.  
 
-```sh
-npm run dev
-```
+While improving spatial feature extraction alone provided limited gains, incorporating frequency-domain features introduced additional complexity but significantly improved robustness. The final dual-branch design reflects a balance between performance and computational cost.
 
-### Compile and Minify for Production
+## Tech Stack
 
-```sh
-npm run build
-```
+- Python
+- PyTorch
+- OpenCV
+- NumPy / SciPy
+
+## Notes
+
+This repository contains multiple model versions and experimental scripts, reflecting the iterative process of model design and optimization.
