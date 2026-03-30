@@ -16,9 +16,9 @@ The goal of this project was to explore robust feature representations for deepf
 
 I experimented with multiple model architectures and training strategies throughout the project.
 
-- Started with **XceptionNet-based models** for spatial feature extraction  
-- Incorporated **CBAM (attention mechanisms)** to enhance feature representation  
-- Explored different **data preprocessing pipelines** and training configurations  
+- Started with XceptionNet-based models for spatial feature extraction  
+- Incorporated CBAM (attention mechanisms) to enhance feature representation  
+- Explored different data preprocessing pipelines and training configurations  
 - Iterated across multiple model variants to improve robustness  
 
 Through these experiments, I observed that models relying solely on spatial features often struggled with cross-domain generalization.
@@ -44,11 +44,13 @@ Introducing frequency-domain features improved robustness, but also increased mo
 
 ## Repository Structure
 
-- `models/` – Model architectures and experiments  
-- `training/` – Training scripts and configurations  
-- `preprocessing/` – Data processing pipelines  
-- `inference/` – Inference and evaluation scripts  
-- `frontend/` – Simple UI for testing results  
+- `backend/` – Backend services for data handling and model inference  
+- `frontend/` – Frontend interface for testing and visualization  
+- `models/`
+  - `data_preprocess/` – Data preprocessing pipelines and scripts  
+  - `models/` – Model architectures and experimental variants  
+  - `train/` – Training scripts and configurations  
+  - `test/` – Evaluation and testing scripts  
 
 ## Notes
 
